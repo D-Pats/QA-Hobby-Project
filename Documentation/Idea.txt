@@ -1,8 +1,36 @@
 Bike Race info:
 	A database that will hold information of Riders in a race including:
-		Rider ID
+		ID (PK AI)
 		Name
 		Team Name
 		Bike Model
 		Bike Make
-	
+		DNF (maybe put this as true false)
+		
+	Create
+		Add a rider with bike details
+	Read
+		Will read Rider and bike details
+	Update
+		Change the details (Change Bike Model and Make or Team Name)
+	Delete
+		Remove a rider
+OR
+
+Music info
+	library of music that will show what songs you have bought:
+		ID (PK AI)
+		Song Name
+		Album Name
+		Genre
+		Release Year
+		Favourite
+		
+	Create
+		Add song to library
+	Read
+		Will read from songs you have
+	Update
+		Change the details (From favourite false to true and vice versa)
+	Delete
+		Remove a song from the library
