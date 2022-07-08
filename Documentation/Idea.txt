@@ -1,0 +1,8 @@
+Bike Race info:
+	A database that will hold information of Riders in a race including:
+		Rider ID
+		Name
+		Team Name
+		Bike Model
+		Bike Make
+	
