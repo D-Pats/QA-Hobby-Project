@@ -25,8 +25,8 @@ public class RidersController {
 	private RidersService service;
 
 	@GetMapping("/demoRiders")
-	public Riders getDemoBicycles() {
-		return new Riders("Fake Person", "Fake Team", "Fake Sponsor");
+	public Riders getDemoRiders() {
+		return new Riders("FakePerson", "FakeTeam", "FakeSponsor");
 	}
 
 	@GetMapping("/getRiders")
@@ -48,8 +48,8 @@ public class RidersController {
 
 	@PatchMapping("/updateRiders/{id}")
 	public Riders update(@PathVariable Integer id, @PathParam("riderName") String riderName,
-			@PathParam("teamName") String teamName, @PathParam("sponsor") String sponsor) {
-		return this.service.update(id, riderName, teamName, sponsor);
+			@PathParam("teamName") String teamName, @PathParam("sponsorName") String sponsorName) {
+		return this.service.update(id, riderName, teamName, sponsorName);
 	}
 
 	@DeleteMapping("/removeRiders/{id}")

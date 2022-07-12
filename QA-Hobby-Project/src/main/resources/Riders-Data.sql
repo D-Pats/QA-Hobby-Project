@@ -6,7 +6,7 @@ INSERT INTO `riders` (
 ) 
 VALUES (
 	default,
-	'Fake Name',
-	'Fake Team',
-	'Fake Sponsor'
+	'FakeName',
+	'FakeTeam',
+	'FakeSponsor'
 );

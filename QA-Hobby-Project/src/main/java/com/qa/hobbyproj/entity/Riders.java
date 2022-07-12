@@ -74,10 +74,4 @@ public class Riders {
 		this.sponsorName = sponsorName;
 	}
 
-	@Override
-	public String toString() {
-		return "Riders [id=" + id + ", riderName=" + riderName + ", teamName=" + teamName + ", sponsorName="
-				+ sponsorName + "]";
-	}
-
 }
