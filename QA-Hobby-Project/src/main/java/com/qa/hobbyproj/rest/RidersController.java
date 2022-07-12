@@ -26,7 +26,7 @@ public class RidersController {
 
 	@GetMapping("/demoRiders")
 	public Riders getDemoBicycles() {
-		return new Riders("Fake Person", "Fake Team", "Specialized");
+		return new Riders("Fake Person", "Fake Team", "Fake Sponsor");
 	}
 
 	@GetMapping("/getRiders")
