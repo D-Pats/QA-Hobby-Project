@@ -49,7 +49,7 @@ public class RidersServiceDB implements RidersService {
 	@Override
 	public Riders create(Riders rider) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repo.save(rider);
 	}
 
 	@Override

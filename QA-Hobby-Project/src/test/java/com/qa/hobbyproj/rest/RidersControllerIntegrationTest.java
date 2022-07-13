@@ -50,6 +50,7 @@ public class RidersControllerIntegrationTest {
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(createdRiderAsJSON);
 
 		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
+
 	}
 
 	@Test
