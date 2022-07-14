@@ -26,11 +26,6 @@ public class RidersController {
 	@Autowired
 	private RidersService service;
 
-	@GetMapping("/demoRiders")
-	public Riders getDemoRiders() {
-		return new Riders("FakePerson", "FakeTeam", "FakeSponsor");
-	}
-
 	@GetMapping("/getRiders")
 	public List<Riders> getAll() {
 		return this.service.getAll();
