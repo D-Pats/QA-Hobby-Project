@@ -1,6 +1,6 @@
 "use strict"
 
-document.querySelector("body > form").addEventListener("submit", function (event) {
+document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     console.log("THIS: ", this);
@@ -57,10 +57,18 @@ function renderRiders() {
                 const riderDelete = document.createElement('button');
                 riderDelete.innerText = "DELETE";
                 riderDelete.addEventListener("click", () => {
-                    console.log("DINO: ", rider);
+                    console.log("Rider: ", rider);
                     deleteRiders(rider.id);
                 });
                 riderDiv.appendChild(riderDelete);
+
+                const riderUpdate = document.createElement('button');
+                riderUpdate.innerText = "UPDATE";
+                riderUpdate.addEventListener("click", () => {
+                    console.log("Rider: ", rider);
+                    updateRiders(rider.id);
+                });
+                riderDiv.appendChild(riderUpdate);
 
                 output.appendChild(riderCol);
             }
@@ -74,6 +82,61 @@ const deleteRiders = (id) => {
             console.log("Delete successful");
             renderRiders();
         }).catch(err => console.error(err));
+}
+
+const updateRiders = (id) => {
+    if (this.riderName.value !== "" && this.teamName.value !== "" && this.sponsorName.value !== "") {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?riderName=" + this.riderName.value + "&teamName=" + this.teamName.value + "&sponsorName=" + this.sponsorName.value)
+            .then(res => {
+                console.log("Update successful");
+                renderRiders();
+            }).catch(err => console.log(err));
+    } 
+    else if (this.teamName.value !== "" && this.sponsorName.value !== "") {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?teamName=" + this.teamName.value + "&sponsorName=" + this.sponsorName.value)
+        .then(res => {
+            console.log("Update successful");
+            renderRiders();
+        }).catch(err => console.log(err));
+    } 
+    else if (this.riderName.value !== "" && this.sponsorName.value !== "" ) {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?riderName=" + this.riderName.value + "&sponsorName=" + this.sponsorName.value)
+            .then(res => {
+                console.log("Update successful");
+                renderRiders();
+            }).catch(err => console.log(err));
+    } 
+    else if (this.riderName.value !== "" && this.teamName.value !== "" ) {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?riderName=" + this.riderName.value + "&teamName=" + this.teamName.value)
+            .then(res => {
+                console.log("Update successful");
+                renderRiders();
+            }).catch(err => console.log(err));
+    } 
+    else if (this.riderName.value !== "") {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?riderName=" + this.riderName.value)
+        .then(res => {
+            console.log("Update successful");
+            renderRiders();
+        }).catch(err => console.log(err));
+    } 
+    else if (this.teamName.value !== "") {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?teamName=" + this.teamName.value)
+        .then(res => {
+            console.log("Update successful");
+            renderRiders();
+        }).catch(err => console.log(err));
+    } 
+    else if (this.sponsorName.value !== "") {
+        axios.patch("http://localhost:8080/updateRiders/" + id + "?sponsorName=" + this.sponsorName.value)
+        .then(res => {
+            console.log("Update successful");
+            renderRiders();
+        }).catch(err => console.log(err));
+    } 
+    else {
+        alert("Fields must not be blank when updating.");
+    }
 }
 
 renderRiders();
