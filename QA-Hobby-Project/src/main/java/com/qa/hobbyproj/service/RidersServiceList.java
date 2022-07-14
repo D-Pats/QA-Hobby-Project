@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.qa.hobbyproj.entity.Riders;
 
 @Service
-
+//@Primary
 public class RidersServiceList implements RidersService {
 
 	private List<Riders> riders = new ArrayList<>();
