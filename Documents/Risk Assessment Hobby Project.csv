@@ -1,0 +1,15 @@
+Risk Matrix,,Impact,,,,
+,,Negligible,Minor,Major,Hazardous,Catastrophic
+Liklihood,Very Unlikely,Low,Low,Low Medium,Medium,Medium
+,Unlikely,Low,Low Medium,Low Medium,Medium,Medium High
+,Moderate,Low,Low Medium,Medium,Medium High,Medium High
+,Likely,Low,Low Medium,Medium,Medium High,High
+,Very Likely,Low Medium,Medium,Medium High,High,High
+Risk,Risk Statement,Response strategy,Objectives,Likelihood,Impact,Risk Level
+`,Uploaded info may contain sensitive data such as usernames or passwords. This could be used maliciously by hackers and be a serious threat to users and the system.,Use strong username and passwords as well as saving them only in a file that will be added to the .gitignore file. The passwords should be updated regularly so that if they are still uploaded then they will not be usable.,Reduces both the chances of a data leak and of being hacked.,Likely,Minor,Low Medium
+Internet Issues/outage,Without internet it is not possible to push to the remote repo meaning new dependencies will not be available and document will be difficult to acquire,Have multiple ways to connect to the internet to prevent this being a single point of failure. This can be done by using a mobile hotspot or even going to a cafe for free wifi.,Reduces downtime to the internet if primary source is unavailable.,Unlikely,Major,Low Medium
+Power Issues/Outage,Without power it is not possible to work on the documents from my PC,Having multiple machines or using a laptop can prevent this as it can be taken to a facility that has not had a power outage,Reduces downtime if power is unavailable,Unlikely,Hazardous,Medium
+Accidental overwrite and push,Pushing changes accidentally could result in non working code going live,Commiting often at working points of code,This gives us commit points we can revert our commit back to in case of accidental pushes,Likely,Negligible,Low
+RSI,Wrists could be strained from poor desk setup and too many hours working,"Move wrists at timed intervals, making sure to take breaks and rest when tired",This will make sure I am not sore the next day or future and can continue to work effectively,Very Unlikely,Minor,Low
+Health problems,Health problems that lead to needing rest or being hospitalised will halt all time spent by the dev on the project that may cause a significant delay,"While possibly unavoidable, you can still ensure that a workspace is clean and avoid contact with persons who may have covid. Avoid dangerous physical activities that could result in injury",To stay healthy during the project time and keep work on track for completion time,Unlikely,Hazardous,Medium
+GitHub site down,Something may happen to the GitHub site causing it to be down for a period of time meaning you cannot clone the repo down or push anything to it,Ensure you have a working repo saved locally to carry on working from and push changes up to GitHub when it comes back online,To ensure as little down time as possible,Unlikely,Catastrophic,Medium High
