@@ -35,7 +35,7 @@ public class RidersServiceDB implements RidersService {
 //	}
 //
 //	@Override
-//	public Riders findByTeamName(String teamName) {
+//	public Riders getByTeamName(String teamName) {
 //		// TODO Auto-generated method stub
 //		return this.repo.findByTeamNameIgnoreCase(teamName);
 //	}

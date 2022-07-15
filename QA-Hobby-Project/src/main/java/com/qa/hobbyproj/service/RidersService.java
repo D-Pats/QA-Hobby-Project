@@ -12,7 +12,7 @@ public interface RidersService {
 
 //	Riders findByRiderName(String riderName);
 //
-//	Riders findByTeamName(String teamName);
+//	Riders getByTeamName(String teamName);
 //
 //	Riders findBySponsorName(String sponsorName);
 

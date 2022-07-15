@@ -12,6 +12,7 @@ import com.qa.hobbyproj.entity.Riders;
 public class RidersServiceList implements RidersService {
 
 	private List<Riders> riders = new ArrayList<>();
+	private List<Riders> teamRiders = new ArrayList<>();
 
 	@Override
 	public Riders getById(Integer id) {
@@ -32,9 +33,16 @@ public class RidersServiceList implements RidersService {
 //	}
 //
 //	@Override
-//	public Riders findByTeamName(String teamName) {
+//	public Riders getByTeamName(String teamName) {
 //		// TODO Auto-generated method stub
-//		return null;
+//		for (Riders rider : this.riders) {
+//			if (rider.getTeamName() == teamName) {
+//				teamRiders.add(rider);
+//			}
+//		}
+//		for (Riders riderInTeam : this.teamRiders) {
+//			return riderInTeam;
+//		}
 //	}
 //
 //	@Override
