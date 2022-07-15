@@ -31,10 +31,10 @@ public class RidersController {
 		return this.service.getAll();
 	}
 
-	@GetMapping("/getRidersById/{id}")
-	public Riders getByID(@PathVariable Integer id) {
-		return this.service.getById(id);
-	}
+//	@GetMapping("/getRidersById/{id}")
+//	public Riders getByID(@PathVariable Integer id) {
+//		return this.service.getById(id);
+//	}
 
 	@PostMapping("/createRiders")
 	public ResponseEntity<Riders> create(@RequestBody Riders rider) {
