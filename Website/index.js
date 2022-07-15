@@ -1,6 +1,6 @@
 "use strict"
 
-document.querySelector("form").addEventListener("submit", function (event) {
+document.querySelector("section > form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     console.log("THIS: ", this);
