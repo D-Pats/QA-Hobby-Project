@@ -73,10 +73,10 @@ public class RidersControllerIntegrationTest {
 		this.mvc.perform(delete("/removeRiders/1")).andExpect(status().isNoContent());
 	}
 
-	@Test
-	void testReadById() throws Exception {
-		List<Riders> riders = List.of(new Riders(1, "FakeName", "FakeTeam", "FakeSponsor"));
-		this.mvc.perform(get("/getRidersById/1")).andExpect(status().isOk())
-				.andExpect(content().json(this.mapper.writeValueAsString(riders.get(0))));
-	}
+//	@Test
+//	void testReadById() throws Exception {
+//		List<Riders> riders = List.of(new Riders(1, "FakeName", "FakeTeam", "FakeSponsor"));
+//		this.mvc.perform(get("/getRidersById/1")).andExpect(status().isOk())
+//				.andExpect(content().json(this.mapper.writeValueAsString(riders.get(0))));
+//	}
 }
