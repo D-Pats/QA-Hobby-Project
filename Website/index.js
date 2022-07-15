@@ -56,6 +56,10 @@ function renderRiders() {
 
                 const riderDelete = document.createElement('button');
                 riderDelete.innerText = "DELETE";
+<<<<<<< HEAD
+=======
+                riderDelete.className = "btn btn-outline-danger";
+>>>>>>> website_styling
                 riderDelete.addEventListener("click", () => {
                     console.log("Rider: ", rider);
                     deleteRiders(rider.id);
@@ -64,6 +68,10 @@ function renderRiders() {
 
                 const riderUpdate = document.createElement('button');
                 riderUpdate.innerText = "UPDATE";
+<<<<<<< HEAD
+=======
+                riderUpdate.className = "btn btn-outline-warning";
+>>>>>>> website_styling
                 riderUpdate.addEventListener("click", () => {
                     console.log("Rider: ", rider);
                     updateRiders(rider.id);
