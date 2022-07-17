@@ -41,6 +41,11 @@ public class RidersController {
 //		return this.service.getByTeamName(teamName);
 //	}
 
+//	@GetMapping("/getRidersByTeamName/{id}")
+//	public Riders getByTeamName(@PathVariable String teamName) {
+//		return this.service.getByTeamName(teamName);
+//	}
+
 	@PostMapping("/createRiders")
 	public ResponseEntity<Riders> create(@RequestBody Riders rider) {
 		System.out.println("Created: " + rider);
