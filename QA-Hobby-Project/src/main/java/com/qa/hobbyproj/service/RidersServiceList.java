@@ -25,23 +25,23 @@ public class RidersServiceList implements RidersService {
 		return this.riders;
 	}
 
-	@Override
-	public Riders findByRiderName(String riderName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Riders findByRiderName(String riderName) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Riders getByTeamName(String teamName) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
-	@Override
-	public Riders findByTeamName(String teamName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Riders findBySponsorName(String sponsorName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Riders findBySponsorName(String sponsorName) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public Riders create(Riders rider) {

@@ -28,23 +28,23 @@ public class RidersServiceDB implements RidersService {
 		return this.repo.findAll();
 	}
 
-	@Override
-	public Riders findByRiderName(String riderName) {
-		// TODO Auto-generated method stub
-		return this.repo.findByRiderNameIgnoreCase(riderName);
-	}
+//	@Override
+//	public Riders findByRiderName(String riderName) {
+//		// TODO Auto-generated method stub
+//		return this.repo.findByRiderNameIgnoreCase(riderName);
+//	}
+//
+//	@Override
+//	public Riders getByTeamName(String teamName) {
+//		// TODO Auto-generated method stub
+//		return this.repo.findByTeamNameIgnoreCase(teamName);
+//	}
 
-	@Override
-	public Riders findByTeamName(String teamName) {
-		// TODO Auto-generated method stub
-		return this.repo.findByTeamNameIgnoreCase(teamName);
-	}
-
-	@Override
-	public Riders findBySponsorName(String sponsorName) {
-		// TODO Auto-generated method stub
-		return this.repo.findBySponsorNameIgnoreCase(sponsorName);
-	}
+//	@Override
+//	public Riders findBySponsorName(String sponsorName) {
+//		// TODO Auto-generated method stub
+//		return this.repo.findBySponsorNameIgnoreCase(sponsorName);
+//	}
 
 	@Override
 	public Riders create(Riders rider) {

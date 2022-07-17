@@ -10,11 +10,11 @@ public interface RidersService {
 
 	List<Riders> getAll();
 
-	Riders findByRiderName(String riderName);
-
-	Riders findByTeamName(String teamName);
-
-	Riders findBySponsorName(String sponsorName);
+//	Riders findByRiderName(String riderName);
+//
+//	Riders getByTeamName(String teamName);
+//
+//	Riders findBySponsorName(String sponsorName);
 
 	Riders create(Riders rider);
 
