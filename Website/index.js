@@ -1,6 +1,26 @@
 "use strict"
 
-var teamNameSearched = "";
+const output = document.querySelector("#output");
+
+document.querySelector("div > form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    console.log("thisL ", this);
+
+    const searchTeam = this.searchTeam.value;
+
+    console.log("dataL", searchTeam);
+
+    axios.get("http://localhost:8080/getRiders")
+        .then(res => {
+            console.log("resL", res);
+            this.reset();
+            this.searchTeam.focus;
+            renderRidersByTeam(searchTeam);
+        }).catch(err => console.log(err));
+
+})
+
 
 document.querySelector("section > form").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -12,8 +32,6 @@ document.querySelector("section > form").addEventListener("submit", function (ev
         teamName: this.teamName.value,
         sponsorName: this.sponsorName.value
     }
-
-
 
     console.log("DATA:", data);
 
@@ -27,24 +45,7 @@ document.querySelector("section > form").addEventListener("submit", function (ev
 
 })
 
-// document.querySelector("a > form").addEventListener("submit", function (event) {
-//     event.preventDefault();
 
-//     console.log("THIS: ", this);
-
-//     var teamNameSearched = this.teamNameSearch.value;
-
-//     console.log("SEARCHED:", teamNameSearched);
-
-//     axios.get("http://localhost:8080/getRidersByTeamName/" + teamNameSearched)
-//         .then(res => {
-//             console.log("RES:", res);
-//             this.reset();
-//             renderRiders();
-//         }).catch(err => console.error(err));
-// })
-
-const output = document.querySelector("#output");
 
 function renderRiders() {
     axios.get("http://localhost:8080/getRiders")
@@ -162,71 +163,61 @@ const updateRiders = (id) => {
     }
 }
 
-// const findByTeamName = (teamNameSearched) => {
-//     axios.get("http://localhost:8080/getRidersByTeamName/" + teamNameSearched)
-//         .then(res => {
-//             console.log("Riders: ", res.data);
-//             output.innerHTML = "";
-//             for (let rider of res.data) {
-//                 console.log(res.data.teamName);
-//                 console.log(teamNameSearched);
-//                 // if (res.data.teamName == teamNameSearched) {
-//                 const riderCol = document.createElement("div");
-//                 riderCol.className = "col";
+function renderRidersByTeam(searchTeam) {
+    axios.get("http://localhost:8080/getRiders")
+        .then(res => {
+            console.log("Riders: ", res.data);
+            output.innerHTML = "";
+            for (let rider of res.data) {
+                if (rider.teamName == searchTeam) {
+                    const riderCol = document.createElement("div");
+                    riderCol.className = "col";
 
-//                 const riderCard = document.createElement("div");
-//                 riderCard.className = "card";
-//                 riderCol.appendChild(riderCard);
+                    const riderCard = document.createElement("div");
+                    riderCard.className = "card";
+                    riderCol.appendChild(riderCard);
 
-//                 const riderDiv = document.createElement("div");
-//                 riderDiv.className = "card-body";
-//                 riderCard.appendChild(riderDiv);
+                    const riderDiv = document.createElement("div");
+                    riderDiv.className = "card-body";
+                    riderCard.appendChild(riderDiv);
 
-//                 const riderRiderName = document.createElement("h2");
-//                 riderRiderName.innerText = rider.riderName;
-//                 riderDiv.appendChild(riderRiderName);
+                    const riderRiderName = document.createElement("h2");
+                    riderRiderName.innerText = rider.riderName;
+                    riderDiv.appendChild(riderRiderName);
 
-//                 const teamName = document.createElement("p");
-//                 teamName.innerText = "Team: " + rider.teamName;
-//                 riderDiv.appendChild(teamName);
+                    const teamName = document.createElement("p");
+                    teamName.innerText = "Team: " + rider.teamName;
+                    riderDiv.appendChild(teamName);
 
-//                 const sponsorName = document.createElement("p");
-//                 sponsorName.innerText = rider.sponsorName;
-//                 riderDiv.appendChild(sponsorName);
+                    const sponsorName = document.createElement("p");
+                    sponsorName.innerText = rider.sponsorName;
+                    riderDiv.appendChild(sponsorName);
 
-//                 const riderDelete = document.createElement('button');
-//                 riderDelete.innerText = "DELETE";
-//                 riderDelete.className = "btn btn-outline-danger";
-//                 riderDelete.addEventListener("click", () => {
-//                     console.log("Rider: ", rider);
-//                     deleteRiders(rider.id);
-//                 });
-//                 riderDiv.appendChild(riderDelete);
+                    const riderDelete = document.createElement('button');
+                    riderDelete.innerText = "DELETE";
+                    riderDelete.className = "btn btn-outline-danger";
+                    riderDelete.addEventListener("click", () => {
+                        console.log("Rider: ", rider);
+                        deleteRiders(rider.id);
+                    });
+                    riderDiv.appendChild(riderDelete);
 
-//                 const riderUpdate = document.createElement('button');
-//                 riderUpdate.innerText = "UPDATE";
-//                 riderUpdate.className = "btn btn-outline-warning";
-//                 riderUpdate.addEventListener("click", () => {
-//                     console.log("Rider: ", rider);
-//                     updateRiders(rider.id);
-//                 });
-//                 riderDiv.appendChild(riderUpdate);
+                    const riderUpdate = document.createElement('button');
+                    riderUpdate.innerText = "UPDATE";
+                    riderUpdate.className = "btn btn-outline-warning";
+                    riderUpdate.addEventListener("click", () => {
+                        console.log("Rider: ", rider);
+                        updateRiders(rider.id);
+                    });
+                    riderDiv.appendChild(riderUpdate);
 
-//                 output.appendChild(riderCol);
-//                 // } else { (console.log("didn't work")) }
-
-//             }
-//         })
-//         .catch(err => console.error(err));
-// }
-
-// findByTeamName(teamNameSearched);
-// // if (teamNameSearched != ""){
-// //     findByTeamName();
-// //     console.alert("running search");
-// // } else{
-// //     renderRiders();
-// //     console.alert("running render");
-// // }
+                    output.appendChild(riderCol);
+                } else {
+                    const errorOccured = document.createElement("p");
+                    errorOccured.innerText = "Error Occurred";
+                }}
+            })
+        .catch(err => console.error(err));
+}
 
 renderRiders();
